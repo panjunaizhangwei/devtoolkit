@@ -2,7 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Link from "next/link";
-import { format, Dialect } from "sql-formatter";
+import { format } from "sql-formatter";
 
 const DIALECTS: { label: string; value: string }[] = [
   { label: "SQL", value: "sql" },
@@ -34,7 +34,7 @@ export default function SqlBeautifierPage() {
     }
     try {
       const result = format(input, {
-        language: dialect as Dialect,
+        language: dialect as any,
         tabWidth,
         keywordCase: upperCase ? "upper" : "preserve",
         linesBetweenQueries: 2,

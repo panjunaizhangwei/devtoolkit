@@ -2,6 +2,7 @@
 
 import { useState, useRef, useCallback } from "react";
 import Link from "next/link";
+// @ts-ignore - browser-image-compression types
 import imageCompression from "browser-image-compression";
 
 type OutputFormat = "webp" | "png" | "jpeg";

@@ -2,6 +2,7 @@
 
 import { useState, useRef, useCallback } from "react";
 import Link from "next/link";
+// @ts-ignore - jsqr has no type declarations
 import jsQR from "jsqr";
 
 export default function QrCodeReaderPage() {

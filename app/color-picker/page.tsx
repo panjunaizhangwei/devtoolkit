@@ -166,11 +166,11 @@ export default function ColorPickerPage() {
               </div>
               <div className="rounded-lg bg-gray-50 px-3 py-2">
                 <span className="text-xs text-gray-400">Temperature</span>
-                <p className="font-medium text-gray-700">{color.isWarm() ? "Warm" : "Cool"}</p>
+                <p className="font-medium text-gray-700">{(() => { const h = color.toHsl().h; return (h < 60 || h > 300) ? "Warm" : "Cool"; })()}</p>
               </div>
               <div className="rounded-lg bg-gray-50 px-3 py-2">
                 <span className="text-xs text-gray-400">Monochrome</span>
-                <p className="font-medium text-gray-700">{color.isMonochrome() ? "Yes" : "No"}</p>
+                <p className="font-medium text-gray-700">{color.toHsl().s === 0 ? "Yes" : "No"}</p>
               </div>
             </div>
           </div>
